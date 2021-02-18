@@ -1,4 +1,7 @@
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ServicioService } from 'src/app/servicio.service';
 
 @Component({
   selector: 'app-formulario',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor(private servicioService: ServicioService) {
+    this.formulario = new FormGroup({
+      titulo: new FormControl,
+      texto: new FormControl,
+      autor: new FormControl,
+      imagen: new FormControl,
+      fecha: new FormControl,
+      categoria: new FormControl,
+    })
+  }
 
   ngOnInit(): void {
+
+  }
+
+  onSubmit() {
+    // console.log(this.formulario.value); OK 
+    this.servicioService.agregarPost(this.formulario.value); // OK
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/post';
+import { Post } from 'src/app/post.interface';
 import { ServicioService } from 'src/app/servicio.service';
 
 @Component({
@@ -9,15 +9,14 @@ import { ServicioService } from 'src/app/servicio.service';
 })
 export class BlogComponent implements OnInit {
 
-  posts: Post;
+  allPosts: Post[];
 
   constructor(private servicioService: ServicioService) {
   }
 
   async ngOnInit() {
-
-    this.posts = await this.servicioService.getAllPosts()
-    console.log(this.posts);
+    this.allPosts = await this.servicioService.getAllPosts()
+    console.log(this.allPosts);
 
   }
 

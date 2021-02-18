@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Post } from './post';
+import { Post } from './post.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ServicioService {
         titulo: 'Islandia experience',
         texto: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, itaque?',
         autor: 'Alejandro Cabello',
-        imagen: 'https://viajes.nationalgeographic.com.es/medio/2019/04/15istock-467903903_02b50c38_2000x1333.jpg',
+        imagen: 'https://www.itaka.pl/blog/wp-content/uploads/2020/05/islandia-blog-itaki-zdjecie-glowne-zorza-polarna-wodospady-800x520.jpg',
         fecha: 'Noviembre 2018',
         categoria: 'viajes',
       },
@@ -39,18 +39,23 @@ export class ServicioService {
         texto: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, itaque?',
         autor: 'Flora Boris',
         imagen: 'https://i.pinimg.com/originals/e5/06/17/e50617d721da0d68ce803f3325651ebb.jpg',
-        fecha: 'Junio 2020',
+        fecha: 'Febero 2019',
         categoria: 'fotografia',
       },
     ]
   }
 
-  getAllPosts(): Promise<Post> {
+  getAllPosts(): Promise<Post[]> {
     return new Promise((resolve, reject) => {
-      console.log(this.arrPosts);
-
-    })
+      resolve(this.arrPosts);
+    });
   }
+
+  agregarPost($event) {
+    this.arrPosts.push($event);
+    console.log(this.arrPosts);
+  }
+
 
 
 }
