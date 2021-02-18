@@ -7,6 +7,9 @@ import { Post } from './post.interface';
 export class ServicioService {
 
   arrPosts: Post[];
+  arrCategorias: string[];
+  arrFiltrado: Post[];
+
 
   constructor() {
     this.arrPosts = [
@@ -51,11 +54,29 @@ export class ServicioService {
     });
   }
 
-  agregarPost($event) {
-    this.arrPosts.push($event);
-    console.log(this.arrPosts);
+  agregarPost(pFormulario) {
+    this.arrPosts.push(pFormulario);
+    //localStorage.setItem('nuevoPost', JSON.stringify(pFormulario));
+    // console.log(this.arrPosts);
+  }
+
+  getCategorias() {
+    this.arrCategorias = this.arrPosts.map(post => { // Me quedo con la propiedad que quiero.
+      return post.categoria;
+    });
+
+    return [...new Set(this.arrCategorias)] // new Set --> no admite duplicados. 
+
   }
 
 
-
+  getPostsByCategoria(pCategoria): Promise<Post[]> {
+    return new Promise((resolve, reject) => {
+      resolve(this.arrFiltrado = this.arrPosts.filter(post => {
+        return post.categoria === pCategoria
+      }));
+    });
+  }
 }
+
+

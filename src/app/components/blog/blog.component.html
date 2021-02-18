@@ -1,4 +1,7 @@
-<p>blog works!</p>
+<select class="form-control" (change)="onChange($event)">
+    <option value="todos" selected>Selecciona una categoría</option>
+    <option [value]="categoria" *ngFor="let categoria of allCategorias">{{categoria}}</option>
+</select>
 
 <div class="container">
     <div class="post" *ngFor="let post of allPosts">

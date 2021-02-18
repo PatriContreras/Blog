@@ -10,14 +10,27 @@ import { ServicioService } from 'src/app/servicio.service';
 export class BlogComponent implements OnInit {
 
   allPosts: Post[];
+  allCategorias: string[];
+
+
 
   constructor(private servicioService: ServicioService) {
   }
 
   async ngOnInit() {
     this.allPosts = await this.servicioService.getAllPosts()
-    console.log(this.allPosts);
+    this.allCategorias = this.servicioService.getCategorias()
+    // console.log(this.allPosts);
+  }
+
+  async onChange($event) {
+    this.allPosts = await this.servicioService.getPostsByCategoria($event.target.value);
+    console.log($event.target.value);
 
   }
+
+
+
+
 
 }
