@@ -1,5 +1,6 @@
 
 .formulario {
+    padding: 20px;
     margin: 0 auto;
     width: 500px;
     height: auto;
@@ -10,6 +11,6 @@ label {
 }
 
 p {
-    color: tomato;
+    color: red;
 }
 

@@ -1,7 +1,13 @@
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="'/blog'">Todos los Blogs</a>
-    <a class="navbar-brand" [routerLink]="'/new'"> Crear Nuevo Blog</a>
-</nav>
+<main>
+    <div>
+        <h1> ¡Bievenid@ a tu Blog Favorito!</h1>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" [routerLink]="'/blog'">Todos los Posts</a>
+        <a class="navbar-brand" [routerLink]="'/new'"> Crear Nuevo Post</a>
+    </nav>
 
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+</main>
