@@ -2,26 +2,37 @@
     <div class="form-group">
         <label>Titulo</label>
         <input type="text" class="form-control" formControlName="titulo">
+        <p class="error" *ngIf="checkValidator('titulo', 'required')">Este campo es obligatorio</p>
     </div>
     <div class="form-group">
         <label>Texto</label>
         <input type="text" class="form-control" formControlName="texto">
+        <p class="error" *ngIf="checkValidator('texto', 'required')">Este campo es obligatorio</p>
+        <p class="error" *ngIf="checkValidator('texto', 'minlength')">Debes escribir al menos 10 caracteres</p>
+        <p class="error" *ngIf="checkValidator('texto', 'maxlength')">No debes escribir más de 200 caracteres</p>
+
     </div>
     <div class="form-group">
         <label>Autor</label>
         <input type="text" class="form-control" formControlName="autor">
+        <p class="error" *ngIf="checkValidator('autor', 'required')">Este campo es obligatorio</p>
     </div>
     <div class="form-group">
         <label>Imagen</label>
         <input type="text" class="form-control" formControlName="imagen">
+        <p class="error" *ngIf="checkValidator('imagen', 'required')">Debes insertar una imagen</p>
+
     </div>
     <div class="form-group">
         <label>Fecha</label>
-        <input type="text" class="form-control" formControlName="fecha">
+        <input type="date" class="form-control" formControlName="fecha">
     </div>
     <div class="form-group">
         <label>Categoria</label>
         <input type="text" class="form-control" formControlName="categoria">
+        <p class="error" *ngIf="checkValidator('categoria', 'required')">Este campo es obligatorio</p>
     </div>
-    <button type="submit" class="btn btn-primary">Agregar Post</button>
+    <button type="submit" [disabled]="!formulario.valid" class="btn btn-primary">Agregar Post</button>
 </form>
+
+<!-- <p>Formulario Valid: {{formulario.valid}}</p> -->

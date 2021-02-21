@@ -39,3 +39,6 @@ img {
     padding: 15px;
 }
 
+.form-control {
+    width: 25%;
+}

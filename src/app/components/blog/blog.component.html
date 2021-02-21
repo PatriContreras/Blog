@@ -1,6 +1,6 @@
 <select class="form-control" (change)="onChange($event)">
     <option value="todos" selected>Selecciona una categoría</option>
-    <option [value]="categoria" *ngFor="let categoria of allCategorias">{{categoria}}</option>
+    <option [value]="categoria" *ngFor="let categoria of allCategorias">{{categoria.toLowerCase()}}</option>
 </select>
 
 <div class="container">
