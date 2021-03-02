@@ -1,5 +1,5 @@
 main {
-    background-image: linear-gradient(to bottom right,#447acb, #e0d2ea);
+    background-color: #f8f9fa;
 }
 
 div {
@@ -9,6 +9,6 @@ div {
 }
 
 h1 {
-    color: white;
+    color: black;
     font-weight: 700;
 }

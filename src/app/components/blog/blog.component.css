@@ -1,7 +1,9 @@
+
 .container {
     display: flex;
     flex-wrap: wrap;
    padding: 20px;
+   margin: 0 auto;
 }
 
 .post{
