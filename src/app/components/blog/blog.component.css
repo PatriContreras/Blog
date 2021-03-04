@@ -1,4 +1,3 @@
-
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -7,31 +6,33 @@
 }
 
 .post{
-    width: 300px;
-    background-color: #f4f5db;
-    border: solid 3px #23689b;
+    background-color: rgba(174, 178, 182, 0.3);
+    width: 500px;
+    border: solid 3px #050505;
     padding: 15px;
     margin: 20px;
 }
 
 h2 {
-    color:  #493323;
+    color:  #000000;
     font-weight: 700;
     padding: 15px;
     text-decoration: underline;
 }
 
-h3 {
+h4 {
+
     padding: 15px;
+    color: rgb(95, 93, 93);
 }
 
 .text {
-    color: #493323;
+    color: #000000;
     padding: 10px;
 }
 
 p {
-color: #91684a;
+color: rgb(95, 93, 93);
 padding: 15px;
 }
 
@@ -42,6 +43,7 @@ img {
 }
 
 .form-control {
+    margin: 0 auto;
     margin-top: 15px;
-    width: 25%;
+    width: 15%;
 }
