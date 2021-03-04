@@ -1,4 +1,4 @@
-import { JsonPipe } from '@angular/common';
+
 import { Injectable } from '@angular/core';
 import { Post } from './post.interface';
 
@@ -68,16 +68,14 @@ export class ServicioService {
     this.arrPosts.push(pFormulario);
     localStorage.setItem('arrayPosts', JSON.stringify(this.arrPosts));
 
-    // console.log(this.arrPosts);
   }
 
   getCategorias() {
-    this.arrCategorias = this.arrPosts.map(post => { // Me quedo con la propiedad que quiero.
+    this.arrCategorias = this.arrPosts.map(post => {
       return post.categoria;
     });
 
-    return [...new Set(this.arrCategorias)] // new Set --> no admite duplicados. 
-
+    return [...new Set(this.arrCategorias)]
   }
 
 

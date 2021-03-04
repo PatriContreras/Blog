@@ -13,7 +13,6 @@ export class BlogComponent implements OnInit {
   allCategorias: string[];
 
 
-
   constructor(private servicioService: ServicioService) {
   }
 
@@ -30,12 +29,6 @@ export class BlogComponent implements OnInit {
       this.allPosts = await this.servicioService.getPostsByCategoria($event.target.value);
       console.log($event.target.value);
     }
-
-
   }
-
-
-
-
 
 }
